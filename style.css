@@ -10,11 +10,43 @@ body {
     color: #fff;
     padding: 20px;
   
-    box-shadow: rgba(154, 205, 50, 0.4) 0px 5px, 
-    rgba(154, 205, 50, 0.3) 0px 10px,
-     rgba(154, 205, 50, 0.2) 0px 15px, 
+    box-shadow: rgba(203, 248, 40, 0.4) 0px 5px, 
+    rgba(203, 248, 40, 0.3) 0px 10px,
+     rgba(203, 248, 40, 0.2) 0px 15px, 
      rgba(245, 188, 0, 0.1) 0px 20px, 
      rgba(22, 27, 51, 0.05) 0px 25px;
+  }
+
+  .hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://i.ibb.co/0XSF0RD/guy-playing.png");
+    margin-top: 30px;
+    height: 494px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  
+  .hero-text {
+  padding-top: 120px;
+  text-align: center;
+   color: white;
+  }
+  
+  .hero-text button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 10px 25px;
+    color: black;
+    background-color: #ddd;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .hero-text button:hover {
+    background-color: #555;
+    color: white;
   }
 
   nav ul {
@@ -26,33 +58,81 @@ body {
     align-items: center;
     height: 60px;
     width: 100%;
+    transform: translate(5%, -3%);
   }
   
   nav ul li {
     flex: 1;
     text-align: center;
+    list-style: none;
+    margin: 0 10px;
   }
   
   nav ul li a {
     display: block;
-    padding: 0 20px;
+    padding: 0 50px;
     text-decoration: none;
     color: rgb(244, 236, 236);
+    position: relative; 
+    display: block;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 63px;
+    background: #333;
+    border-radius: 50%;
+    font-size: 20px;
+    color: rgb(212, 203, 203);
+    transition: .5s;
+  }
+  nav ul li a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgb(203, 248, 40);
+    transition: .5s;
+    transform: scale(.9);
+    z-index: -1;
+  }
+   nav ul li a:hover::before {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #ffee10;
+  }
+ 
+  
+  nav ul li a:hover {
+    color: whitesmoke;
+    text-shadow: 0 0 12px yellowgreen;
   }
   
   h1 {
     margin: 0;
   }
+
   
  .top-bar {
-  display: flex;
+  
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 100;
-  background-color: yellowgreen;
+  background-color: rgb(203, 248, 40);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+ }
+
+ .div1 {
+  float: left;
+ }
+
+ .top-bar::after {
+  content: '';
+  display: table;
+  clear: both;
  }
   
 
@@ -110,7 +190,19 @@ body {
 
   .account-info {
     margin-top: 36px;
-  }
+   
+    display:flex;
+    flex-direction: row;
+    float: right;
+    }
+
+    .gap {
+      margin-right: 30px;
+    }
+
+
+
+  
 
   input {
     width: 480px;
@@ -260,7 +352,7 @@ body {
   button {
     background-color: white;
     color: black;
-    border: 2px solid #4CAF50;
+    border: 2px solid rgb(203, 248, 40);
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
@@ -273,7 +365,7 @@ body {
   }
   
   button:hover {
-    background-color: #4CAF50;
+    background-color:  #333;
     color: white;
   }
 
@@ -307,6 +399,8 @@ body {
     height: 250px;
     object-fit: cover;
   }
+
+  
   
   @media(max-width: 768px) {
     .game-grid {
@@ -326,7 +420,7 @@ body {
       grid-template-columns: repeat(2, 1fr);
     }
     nav {
-      margin-top: 220px;
+      margin-top: 320px;
      
       
       
